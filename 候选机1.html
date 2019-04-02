@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖</title>
+    <style>
+        input{
+            width: 20px;
+            height: 20px;
+        }
+        [type="button"]{
+            width: 40px;
+            height: 20px;
+        }
+    </style>
+    <script>
+        var showNum;
+        window.onload=function(){
+            document.getElementById("start").onclick=function(){
+                showNum=setInterval(randomNum,500);
+                document.getElementById("stop").disabled=false;
+                this.disabled=true;
+            }
+            document.getElementById("stop").onclick=function(){
+                document.getElementById("start").disabled=false;
+                this.disabled=true;
+                window.clearInterval(showNum);
+            }
+        }
+         var randomNum=function(){
+            var result=document.getElementsByName("num");
+            for(var i=0;i<result.length;i++){
+                result[i].value=Math.floor(Math.random()*35+1);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="text" name="num" value=""/>
+    <input type="button" value="开始" id="start"/>
+    <input type="button" value="停止" id="stop" disabled="disabled"/>
+</body>
+</html>
