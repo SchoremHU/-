@@ -29,6 +29,8 @@
         }
          var randomNum=function(){
             var result=document.getElementsByName("num");
+            console.log(result)
+            console.log(result.length)
             for(var i=0;i<result.length;i++){
                 result[i].value=Math.floor(Math.random()*35+1);
             }
