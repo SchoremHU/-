@@ -29,22 +29,18 @@
 
     <script>
         // 前区
-        screen.call(undefined,35,"Front")
+        screen.call(undefined, 35, "Front")
 
         // 后区
-        screen.call(undefined,12,"after")
+        screen.call(undefined, 12, "after")
 
-// 机选构造函数
-        function screen(a,b) {
+        // 机选构造函数
+        function screen(a, b) {
             let Front = new Array(a);
-            for (var i = 0; i < Front.length; i++) {
-                Front[i] = i + 1;
-            }
+            for (var i = 0; i < Front.length; i++) { Front[i] = i + 1; }
             let FrontID = document.getElementsByName(b);
             for (var FrontIDII, ii = 0; ii < FrontID.length; ii++) {
-                do {
-                    FrontIDII = Front[Math.floor(Math.random() * Front.length)];
-                }
+                do { FrontIDII = Front[Math.floor(Math.random() * Front.length)]; }
                 while (Front[FrontIDII] == null)
                 FrontID[ii].value = FrontIDII;
                 Front.splice(FrontIDII - 1, 1, null)
@@ -61,7 +57,8 @@
         //     for (var num, i = 0; i < count; i++) {
         //         do {
         //             num = Math.floor(Math.random() * count);
-        //         } while (originalArray[num] == null);
+        //         } 
+        //          while (originalArray[num] == null);
         //         document.write(originalArray[num] + " , ");
         //         originalArray[num] = null;
         //     }
