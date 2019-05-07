@@ -29,6 +29,7 @@
 
     <script>
         // 前区
+        var d1 = new Date().getTime();
         screen.call(undefined, 35, "Front")
 
         // 后区
@@ -37,9 +38,9 @@
         // 机选构造函数
         function screen(a, b) {
             let Front = new Array(a);
-            for (var i = 0; i < Front.length; i++) { Front[i] = i + 1; }
+            for (let i = 0; i < Front.length; i++) { Front[i] = i + 1; }
             let FrontID = document.getElementsByName(b);
-            for (var FrontIDII, ii = 0; ii < FrontID.length; ii++) {
+            for (let FrontIDII, ii = 0; ii < FrontID.length; ii++) {
                 do { FrontIDII = Front[Math.floor(Math.random() * Front.length)]; }
                 while (Front[FrontIDII] == null)
                 FrontID[ii].value = FrontIDII;
@@ -65,8 +66,8 @@
         //     var d2 = new Date().getTime();
         //     document.write("运算耗时" + (d2 - d1)); 
 
-
-
+        var d2 = new Date().getTime();
+console.log("运算耗时" , d2 - d1)
     </script>
 </body>
 
