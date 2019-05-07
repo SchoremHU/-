@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function getRandomArrayElements(arr, count) {
+            var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+            while (i-- > min) {
+                index = Math.floor((i + 1) * Math.random());
+                console.log("index1-",index)
+                console.log("i1-",i)
+                console.log("min1-",min)
+                temp = shuffled[index];
+                console.log("temp-",temp)
+                console.log("--------i2",i)
+                console.log("--------min2",min)
+                shuffled[index] = shuffled[i];
+                console.log(shuffled[index])
+                console.log("----------------i3",i)
+                console.log("----------------min3",min)
+                shuffled[i] = temp;
+                console.log(shuffled)
+                console.log("------------------------i4",i)
+                console.log("------------------------min4",min)
+            }
+            return shuffled.slice(min);
+        }
+        var items = ['1', '2', '4', '5', '6', '7', '8', '9', '10'];
+        console.log(getRandomArrayElements(items, 4));
+
+    </script>
+</body>
+
+</html>
