@@ -7,22 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>彩票机选码</title>
     <style>
-        .Front,.after {width: 20px;}
+        .Front,
+        .after {
+            width: 20px;
+        }
     </style>
 </head>
 
 <body>
-
-    <input type="text" name="Front" class="Front" id="Front1" value="0">
-    <input type="text" name="Front" class="Front" id="Front2" value="0">
-    <input type="text" name="Front" class="Front" id="Front3" value="0">
-    <input type="text" name="Front" class="Front" id="Front4" value="0">
-    <input type="text" name="Front" class="Front" id="Front5" value="0">
-    <input type="button" name="FrontStart" value="开始">
+    <div>
+        <input type="text" name="Front" class="Front" id="Front1" value="0">
+        <input type="text" name="Front" class="Front" id="Front2" value="0">
+        <input type="text" name="Front" class="Front" id="Front3" value="0">
+        <input type="text" name="Front" class="Front" id="Front4" value="0">
+        <input type="text" name="Front" class="Front" id="Front5" value="0">
+        <input type="button" name="FrontStart" value="开始">
+    </div>
     <hr>
-    <input type="text" name="after" class="after" id="after1" value="0">
-    <input type="text" name="after" class="after" id="after2" value="0">
-    <input type="button" name="afterStart" value="开始">
+    <div>
+        <input type="text" name="after" class="after" id="after1" value="0">
+        <input type="text" name="after" class="after" id="after2" value="0">
+        <input type="button" name="afterStart" value="开始">
+    </div>
 
     <script>
         var d1 = new Date().getTime();
@@ -64,7 +70,7 @@
         //     document.write("运算耗时" + (d2 - d1)); 
 
         var d2 = new Date().getTime();
-        console.log("运算耗时" , d2 - d1)
+        console.log("运算耗时", d2 - d1)
     </script>
 </body>
 
