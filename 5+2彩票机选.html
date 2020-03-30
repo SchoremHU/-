@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>彩票机选码</title>
+    <style>
+        .Front,.after {width: 20px;}
+    </style>
+</head>
+
+<body>
+    <div class="AllFront">
+        <input type="text" name="Front" class="Front" id="Front1" value="0">
+        <input type="text" name="Front" class="Front" id="Front2" value="0">
+        <input type="text" name="Front" class="Front" id="Front3" value="0">
+        <input type="text" name="Front" class="Front" id="Front4" value="0">
+        <input type="text" name="Front" class="Front" id="Front5" value="0">
+        <input type="button" name="FrontStart" value="开始">
+    </div>
+    <hr>
+    <div class="AllAfter">
+        <input type="text" name="after" class="after" id="after1" value="0">
+        <input type="text" name="after" class="after" id="after2" value="0">
+        <input type="button" name="afterStart" value="开始">
+    </div>
+
+    <script>
+        var d1 = new Date().getTime();
+        // 前区
+        screen.call(undefined, 35, "Front")
+
+        // 后区
+        screen.call(undefined, 12, "after")
+
+        // 机选构造函数
+        function screen(a, b) {
+            let Front = new Array(a);
+            for (let i = 0; i < Front.length; i++) { Front[i] = i + 1; }
+            let FrontID = document.getElementsByName(b);
+            for (let FrontIDII, ii = 0; ii < FrontID.length; ii++) {
+                do { FrontIDII = Front[Math.floor(Math.random() * Front.length)]; }
+                while (Front[FrontIDII] == null)
+                FrontID[ii].value = FrontIDII;
+                Front.splice(FrontIDII - 1, 1, null)
+            }
+        }
+
+        // var count = 5;
+        //     var originalArray = new Array;//原数组
+        //     //给原数组originalArray赋值
+        //     for (var i = 0; i < count; i++) {
+        //         originalArray[i] = i + 1;
+        //     }
+        //     var d1 = new Date().getTime();
+        //     for (var num, i = 0; i < count; i++) {
+        //         do {
+        //             num = Math.floor(Math.random() * count);
+        //         } 
+        //          while (originalArray[num] == null);
+        //         document.write(originalArray[num] + " , ");
+        //         originalArray[num] = null;
+        //     }
+        //     var d2 = new Date().getTime();
+        //     document.write("运算耗时" + (d2 - d1)); 
+
+        var d2 = new Date().getTime();
+        console.log("运算耗时", d2 - d1)
+    </script>
+</body>
+
+</html>
